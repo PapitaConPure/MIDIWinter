@@ -62,6 +62,9 @@ class "UIColorPicker" {
 			-- Remove the hash symbol
 			hexCode = string.sub(hexCode, 2)
 		end
+
+		-- Remove all non-hex characters
+		hexCode = string.gsub(hexCode, "[^0-9A-Fa-f]", "")
 		
 		local r = tonumber( string.sub(hexCode, 1,2), 16 ) / 255
 		local g = tonumber( string.sub(hexCode, 3,4), 16 ) / 255
